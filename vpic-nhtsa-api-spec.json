@@ -46,8 +46,8 @@
           ],
            "responses": {
                "200": {
-              "description": "Successful call of Decode VIN(s) according to the filled fields",
-            },
+              "description": "Successful call of Decode VIN(s) according to the filled fields"
+            }
            }
         }
       },
@@ -82,8 +82,8 @@
           ],
            "responses": {
                "200": {
-              "description": "Successful call of Decode VIN Extended(s) according to the filled fields",
-            },
+              "description": "Successful call of Decode VIN Extended(s) according to the filled fields"
+            }
            }
         }
       },
@@ -118,8 +118,8 @@
           ],
            "responses": {
                "200": {
-              "description": "Successful call of Decode VIN Extended flat(s) according to the filled fields",
-            },
+              "description": "Successful call of Decode VIN Extended flat(s) according to the filled fields"
+            }
            }
         }
       }
