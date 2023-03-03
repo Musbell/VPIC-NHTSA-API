@@ -214,7 +214,7 @@
     },
     "/vehicles/GetAllMakes": {
       "get": {
-        "tags": ["Makes"],
+        "tags": ["Make"],
         "summary": "All Makes",
         "description": "This provides a list of all the Makes available in vPIC Dataset.",
         "operationId": "allMakes",
@@ -239,7 +239,7 @@
     },
     "/vehicles/GetParts": {
       "get": {
-        "tags": ["Parts"],
+        "tags": ["Part"],
         "summary": "Parts",
         "description": "This provides a list of ORGs with letter date in the given range of the dates and with specified Type of ORG. Up to 1000 results will be returned at a time.",
         "operationId": "parts",
@@ -312,17 +312,198 @@
               "example": "json"
             }
           },
-             {
-               "name": "page",
-               "in": "query",
-               "required": true,
-               "description": "(optional) number, 1 (default) first 1000 records, 2 - next 1000 records, ...",
-               "schema": {
-                 "type": "integer",
-                 "example": "1",
-                 "default": "1"
-               }
-             }
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "description": "(optional) number, 1 (default) first 1000 records, 2 - next 1000 records, ...",
+            "schema": {
+              "type": "integer",
+              "example": "1",
+              "default": "1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of part(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetAllManufacturers": {
+      "get": {
+        "tags": ["Manufacturer"],
+        "summary": "All Manufacturers",
+        "description": "This provides a list of all the Manufacturers available in vPIC Dataset.",
+        "operationId": "manufacturers",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "ManufacturerType",
+            "in": "query",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "example": "Intermediate",
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": true,
+            "description": "Results are provided in pages of 100 items, use parameter 'page' to specify 1-st (default), 2nd, 3rd, ...Nth ... page.",
+            "schema": {
+              "type": "integer",
+              "example": "1",
+              "default": "1"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetManufacturerDetails/{manufacturer}": {
+      "get": {
+        "tags": ["Manufacturer"],
+        "summary": "Manufacturer Details",
+        "description": "This provides the details for a specific manufacturer that is requested.",
+        "operationId": "manufacturerDetails",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "path",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "example": "honda",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ManufacturerName"
+                },
+                {
+                  "$ref": "#/components/schemas/ManufacturerId"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of all make(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetMakeForManufacturer/{manufacturer}": {
+      "get": {
+        "tags": ["Manufacturer", "Make"],
+        "summary": "Makes for Manufacturer by Manufacturer Name",
+        "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer that is requested.",
+        "operationId": "makesForManufacturerByManufacturerName",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "path",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "example": "honda",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ManufacturerName"
+                },
+                {
+                  "$ref": "#/components/schemas/ManufacturerId"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of all make(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetMakesForManufacturerAndYear/{manufacturer}": {
+      "get": {
+        "tags": ["Makes", "Manufacturer"],
+        "summary": " Makes for Manufacturer by Manufacturer Name and Year",
+        "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer and whose Year From and Year To range cover the specified year",
+        "operationId": "makesForManufacturerByManufacturerNameAndYear",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "year",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "integer",
+              "example": "2013"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "path",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "example": "honda",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ManufacturerName"
+                },
+                {
+                  "$ref": "#/components/schemas/ManufacturerId"
+                }
+              ]
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -340,13 +521,13 @@
       "name": "WMI"
     },
     {
-      "name": "Makes"
+      "name": "Make"
     },
     {
       "name": "Parts"
     },
     {
-      "name": "Manufacturers"
+      "name": "Manufacturer"
     },
     {
       "name": "Vehicle Types"
