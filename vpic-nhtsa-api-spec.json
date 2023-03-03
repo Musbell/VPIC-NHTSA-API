@@ -214,7 +214,7 @@
     },
     "/vehicles/GetAllMakes": {
       "get": {
-        "tags": ["Make"],
+        "tags": ["Makes"],
         "summary": "All Makes",
         "description": "This provides a list of all the Makes available in vPIC Dataset.",
         "operationId": "allMakes",
@@ -239,7 +239,7 @@
     },
     "/vehicles/GetParts": {
       "get": {
-        "tags": ["Part"],
+        "tags": ["Parts"],
         "summary": "Parts",
         "description": "This provides a list of ORGs with letter date in the given range of the dates and with specified Type of ORG. Up to 1000 results will be returned at a time.",
         "operationId": "parts",
@@ -333,7 +333,7 @@
     },
     "/vehicles/GetAllManufacturers": {
       "get": {
-        "tags": ["Manufacturer"],
+        "tags": ["Manufacturers"],
         "summary": "All Manufacturers",
         "description": "This provides a list of all the Manufacturers available in vPIC Dataset.",
         "operationId": "manufacturers",
@@ -379,7 +379,7 @@
     },
     "/vehicles/GetManufacturerDetails/{manufacturer}": {
       "get": {
-        "tags": ["Manufacturer"],
+        "tags": ["Manufacturers"],
         "summary": "Manufacturer Details",
         "description": "This provides the details for a specific manufacturer that is requested.",
         "operationId": "manufacturerDetails",
@@ -421,7 +421,7 @@
     },
     "/vehicles/GetMakeForManufacturer/{manufacturer}": {
       "get": {
-        "tags": ["Manufacturer", "Make"],
+        "tags": ["Makes"],
         "summary": "Makes for Manufacturer by Manufacturer Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer that is requested.",
         "operationId": "makesForManufacturerByManufacturerName",
@@ -463,7 +463,7 @@
     },
     "/vehicles/GetMakesForManufacturerAndYear/{manufacturer}": {
       "get": {
-        "tags": ["Makes", "Manufacturer"],
+        "tags": ["Makes"],
         "summary": " Makes for Manufacturer by Manufacturer Name and Year",
         "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer and whose Year From and Year To range cover the specified year",
         "operationId": "makesForManufacturerByManufacturerNameAndYear",
@@ -521,13 +521,13 @@
       "name": "WMI"
     },
     {
-      "name": "Make"
+      "name": "Makes"
     },
     {
       "name": "Parts"
     },
     {
-      "name": "Manufacturer"
+      "name": "Manufacturers"
     },
     {
       "name": "Vehicle Types"
