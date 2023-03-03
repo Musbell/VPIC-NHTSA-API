@@ -511,6 +511,48 @@
           }
         }
       }
+    },
+    "/vehicles/GetMakesForVehicleType/{vehicleType}": {
+      "get": {
+        "tags": ["Makes"],
+        "summary": "Makes for Vehicle Type by Vehicle Type Name",
+        "description": "This returns all the Makes in the vPIC dataset for a specified vehicle type whose name is LIKE the vehicle type name in vPIC Dataset",
+        "operationId": "WMIsForManufacturer",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "vehicleType",
+            "in": "query",
+            "required": false,
+            "description": " Vehicle Type name can be a partial name, or a full name for more specificity (e.g., 'Vehicle', 'Moto', 'Low Speed Vehicle', etc.)",
+            "schema": {
+              "example": "car",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/VehicleTypeString"
+                },
+                {
+                  "$ref": "#/components/schemas/VehicleTypeInteger"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
     }
   },
   "tags": [
