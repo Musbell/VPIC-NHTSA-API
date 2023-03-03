@@ -166,6 +166,7 @@
             "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
             "required": true,
             "schema": {
+              "example": "hon",
               "oneOf": [
                 {
                   "$ref": "#/components/schemas/ManufacturerName"
@@ -192,6 +193,7 @@
             "required": false,
             "description": "If VehicleType is a number - method will do exact match on VehicleType's Id. If VehicleType is a string - it will look for VehicleType whose name is LIKE the provided name (it accepts a partial VehicleType name as an input). Multiple results are returned in case of multiple matches.",
             "schema": {
+              "example": "car",
               "oneOf": [
                 {
                   "$ref": "#/components/schemas/VehicleTypeString"
@@ -206,6 +208,125 @@
         "responses": {
           "200": {
             "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetAllMakes": {
+      "get": {
+        "tags": ["Makes"],
+        "summary": "All Makes",
+        "description": "This provides a list of all the Makes available in vPIC Dataset.",
+        "operationId": "allMakes",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of all make(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetParts": {
+      "get": {
+        "tags": ["Parts"],
+        "summary": "Parts",
+        "description": "This provides a list of ORGs with letter date in the given range of the dates and with specified Type of ORG. Up to 1000 results will be returned at a time.",
+        "operationId": "parts",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "type",
+            "in": "query",
+            "required": true,
+            "description": "number, 565 (Vehicle Identification Number Guidance, based on 49 CFR Part 565) or 566 (Manufacturer Identification – Reporting Requirements based on 49 CFR Part 566)",
+            "schema": {
+              "type": "integer",
+              "example": "565"
+            }
+          },
+          {
+            "name": "fromDate",
+            "in": "query",
+            "required": false,
+            "description": "(optional) ORG's Letter Date should be on or after this date",
+            "schema": {
+              "type": "string",
+              "example": "1/1/2015"
+            }
+          },
+          {
+            "name": "toDate",
+            "in": "query",
+            "required": false,
+            "description": "(optional) ORG's Letter Date should be on or before this date",
+            "schema": {
+              "type": "string",
+              "example": "1/1/2015"
+            }
+          },
+          {
+            "name": "manufacturer",
+            "in": "query",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "example": "hon",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ManufacturerName"
+                },
+                {
+                  "$ref": "#/components/schemas/ManufacturerId"
+                }
+              ]
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "description": "(optional) string, can be 'xml' (default), 'csv' or 'json'",
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+             {
+               "name": "page",
+               "in": "query",
+               "required": true,
+               "description": "(optional) number, 1 (default) first 1000 records, 2 - next 1000 records, ...",
+               "schema": {
+                 "type": "integer",
+                 "example": "1",
+                 "default": "1"
+               }
+             }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of all make(s) according to the filled fields"
           }
         }
       }
