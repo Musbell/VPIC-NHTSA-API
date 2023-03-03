@@ -1,0 +1,29 @@
+_id: req_wrk_7ae45c1df2ff49db978399635d9781fc05b00865
+type: Request
+parentId: fld_wrk_7ae45c1df2ff49db978399635d9781fc12033717
+modified: 1677838208380
+created: 1677837809394
+url: "{{ base_url }}/vehicles/DecodeVinValues/5UXWX7C5*BA"
+name: Decode VIN
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: format
+    disabled: false
+    value: json
+    id: pair_7c58852677d34b6aa6335db17998fceb
+  - name: modelyear
+    disabled: true
+    value: "2011"
+    id: pair_7ae8e5d91e1343e19b0ea0cb2c3727c4
+headers: []
+authentication: {}
+metaSortKey: -1677837809394
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global

@@ -1,0 +1,164 @@
+_id: spc_cb42c34e027f40f0a2a866904aa9d977
+type: ApiSpec
+parentId: wrk_7ae45c1df2ff49db978399635d9781fc
+modified: 1677838915689
+created: 1677823388525
+fileName: vpic-nhtsa-api-spec.yaml
+contents: >-
+  {
+    "openapi": "3.0.3",
+    "info": {
+      "description": "The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications.",
+      "title": "VPIC-NHTSA API",
+      "version": "1.0.0",
+      "contact": {
+       "name": "NHTSA",
+        "url": "https://vpic.nhtsa.dot.gov/"
+      }
+    },
+     "servers": [
+      {
+        "url": "https://vpic.nhtsa.dot.gov/api"
+      }
+    ],
+    "paths": {
+        "/vehicles/DecodeVinValues/5UXWX7C5*BA": {
+          "get": {
+            "tags": [
+              "VIN"
+            ],
+            "summary": "Decode VIN",
+            "description": "The Decode VIN API will decode the VIN and the decoded output will be made available in the format of Key-value pairs",
+            "operationId": "decodeVIN",
+            "parameters": [
+              {
+                "name": "format",
+                "in": "query",
+                "required": true,
+                "schema": {
+                 "enum": ["xml", "csv", "json"],
+                  "type": "string",
+                  "example": "json"
+                }
+              },
+              {
+                "name": "modelyear",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "example": "2011"
+                }
+              }
+            ],
+             "responses": {
+                 "200": {
+                "description": "Successful call of Decode VIN(s) according to the filled fields",
+              },
+             }
+          }
+        },
+         "/vehicles/DecodeVinExtended/5UXWX7C5*BA": {
+          "get": {
+            "tags": [
+              "VIN"
+            ],
+            "summary": "Decode VIN Extended",
+            "description": "This is exactly like the Decode VIN method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
+            "operationId": "decodeVinExtended",
+            "parameters": [
+              {
+                "name": "format",
+                "in": "query",
+                "required": true,
+                "schema": {
+                 "enum": ["xml", "csv", "json"],
+                  "type": "string",
+                  "example": "json"
+                }
+              },
+              {
+                "name": "modelyear",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "example": "2011"
+                }
+              }
+            ],
+             "responses": {
+                 "200": {
+                "description": "Successful call of Decode VIN Extended(s) according to the filled fields",
+              },
+             }
+          }
+        },
+          "/vehicles/DecodeVinValuesExtended/5UXWX7C5*BA": {
+          "get": {
+            "tags": [
+              "VIN"
+            ],
+            "summary": "Decode VIN Extended (flat format)",
+            "description": "This is exactly like the Decode VIN (flat format) method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
+            "operationId": "decodeVinExtendedFlatFormat",
+            "parameters": [
+              {
+                "name": "format",
+                "in": "query",
+                "required": true,
+                "schema": {
+                 "enum": ["xml", "csv", "json"],
+                  "type": "string",
+                  "example": "json"
+                }
+              },
+              {
+                "name": "modelyear",
+                "in": "query",
+                "required": false,
+                "schema": {
+                  "type": "string",
+                  "example": "2011"
+                }
+              }
+            ],
+             "responses": {
+                 "200": {
+                "description": "Successful call of Decode VIN Extended flat(s) according to the filled fields",
+              },
+             }
+          }
+        }
+    },
+      "tags": [
+       {
+        "name": "VIN"
+      },
+       {
+        "name": "WMIs"
+      },
+      {
+        "name": "Makes"
+      },
+      {
+        "name": "Parts"
+      },
+      {
+        "name": "Manufacturers"
+      },
+      {
+        "name": "Vehicle Types"
+      },
+      {
+        "name": "Equipment Plant"
+      },
+      {
+        "name": "Models"
+      },
+      {
+        "name": "Vehicle Variable"
+      }
+    ]
+  }
+contentType: yaml

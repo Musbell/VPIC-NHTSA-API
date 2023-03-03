@@ -1,0 +1,14 @@
+_id: env_env_8ec483076fddb1154bad83dc5055404f5d89911c_sub__6fb08a3e
+type: Environment
+parentId: env_8ec483076fddb1154bad83dc5055404f5d89911c
+modified: 1677835463478
+created: 1677835463478
+name: OpenAPI env vpic.nhtsa.dot.gov
+data:
+  scheme: https
+  base_path: /api
+  host: vpic.nhtsa.dot.gov
+dataPropertyOrder: null
+color: null
+isPrivate: false
+metaSortKey: 1677835463478

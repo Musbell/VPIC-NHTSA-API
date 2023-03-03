@@ -1,0 +1,27 @@
+_id: req_wrk_7ae45c1df2ff49db978399635d9781fc3f789a8c
+type: Request
+parentId: fld_wrk_7ae45c1df2ff49db978399635d9781fc12033717
+modified: 1677838600849
+created: 1677838600849
+url: "{{ base_url }}/vehicles/DecodeVinExtended/5UXWX7C5*BA"
+name: Decode VIN Extended
+description: ""
+method: GET
+body: {}
+parameters:
+  - name: format
+    disabled: false
+    value: json
+  - name: modelyear
+    disabled: true
+    value: "2011"
+headers: []
+authentication: {}
+metaSortKey: -1677838600849
+isPrivate: false
+settingStoreCookies: true
+settingSendCookies: true
+settingDisableRenderRequestBody: false
+settingEncodeUrl: true
+settingRebuildPath: true
+settingFollowRedirects: global
