@@ -5,131 +5,218 @@
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
     "contact": {
-     "name": "NHTSA",
+      "name": "NHTSA",
       "url": "https://vpic.nhtsa.dot.gov/"
     }
   },
-   "servers": [
+  "servers": [
     {
       "url": "https://vpic.nhtsa.dot.gov/api"
     }
   ],
   "paths": {
-      "/vehicles/DecodeVinValues/5UXWX7C5*BA": {
-        "get": {
-          "tags": [
-            "VIN"
-          ],
-          "summary": "Decode VIN",
-          "description": "The Decode VIN API will decode the VIN and the decoded output will be made available in the format of Key-value pairs",
-          "operationId": "decodeVIN",
-          "parameters": [
-            {
-              "name": "format",
-              "in": "query",
-              "required": true,
-              "schema": {
-               "enum": ["xml", "csv", "json"],
-                "type": "string",
-                "example": "json"
-              }
-            },
-            {
-              "name": "modelyear",
-              "in": "query",
-              "required": false,
-              "schema": {
-                "type": "string",
-                "example": "2011"
-              }
+    "/vehicles/DecodeVinValues/5UXWX7C5*BA": {
+      "get": {
+        "tags": ["VIN"],
+        "summary": "Decode VIN",
+        "description": "The Decode VIN API will decode the VIN and the decoded output will be made available in the format of Key-value pairs",
+        "operationId": "decodeVIN",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
             }
-          ],
-           "responses": {
-               "200": {
-              "description": "Successful call of Decode VIN(s) according to the filled fields"
+          },
+          {
+            "name": "modelyear",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "2011"
             }
-           }
-        }
-      },
-       "/vehicles/DecodeVinExtended/5UXWX7C5*BA": {
-        "get": {
-          "tags": [
-            "VIN"
-          ],
-          "summary": "Decode VIN Extended",
-          "description": "This is exactly like the Decode VIN method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
-          "operationId": "decodeVinExtended",
-          "parameters": [
-            {
-              "name": "format",
-              "in": "query",
-              "required": true,
-              "schema": {
-               "enum": ["xml", "csv", "json"],
-                "type": "string",
-                "example": "json"
-              }
-            },
-            {
-              "name": "modelyear",
-              "in": "query",
-              "required": false,
-              "schema": {
-                "type": "string",
-                "example": "2011"
-              }
-            }
-          ],
-           "responses": {
-               "200": {
-              "description": "Successful call of Decode VIN Extended(s) according to the filled fields"
-            }
-           }
-        }
-      },
-        "/vehicles/DecodeVinValuesExtended/5UXWX7C5*BA": {
-        "get": {
-          "tags": [
-            "VIN"
-          ],
-          "summary": "Decode VIN Extended (flat format)",
-          "description": "This is exactly like the Decode VIN (flat format) method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
-          "operationId": "decodeVinExtendedFlatFormat",
-          "parameters": [
-            {
-              "name": "format",
-              "in": "query",
-              "required": true,
-              "schema": {
-               "enum": ["xml", "csv", "json"],
-                "type": "string",
-                "example": "json"
-              }
-            },
-            {
-              "name": "modelyear",
-              "in": "query",
-              "required": false,
-              "schema": {
-                "type": "string",
-                "example": "2011"
-              }
-            }
-          ],
-           "responses": {
-               "200": {
-              "description": "Successful call of Decode VIN Extended flat(s) according to the filled fields"
-            }
-           }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Decode VIN(s) according to the filled fields"
+          }
         }
       }
+    },
+    "/vehicles/DecodeVinExtended/5UXWX7C5*BA": {
+      "get": {
+        "tags": ["VIN"],
+        "summary": "Decode VIN Extended",
+        "description": "This is exactly like the Decode VIN method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
+        "operationId": "decodeVinExtended",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "modelyear",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "2011"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Decode VIN Extended(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/DecodeVinValuesExtended/5UXWX7C5*BA": {
+      "get": {
+        "tags": ["VIN"],
+        "summary": "Decode VIN Extended (flat format)",
+        "description": "This is exactly like the Decode VIN (flat format) method but provides additional information on variables related to other NHTSA programs like NCSA etc.",
+        "operationId": "decodeVinExtendedFlatFormat",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "modelyear",
+            "in": "query",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "example": "2011"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Decode VIN Extended flat(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/DecodeWMI/{WmiCode}": {
+      "get": {
+        "tags": ["WMI"],
+        "summary": "Decode WMI",
+        "description": "This provides information on the World Manufacturer Identifier for a specific WMI code. WMIs may be put in as either 3 characters representing VIN position 1-3 or 6 characters representing VIN positions 1-3 & 12-14. Example 'JTD', '1T9131'.",
+        "operationId": "decodeWMI",
+        "parameters": [
+          {
+            "name": "WmiCode",
+            "in": "path",
+            "description": "World Manufacturer Identifier",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "1FD",
+              "default": "1FD"
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Decode Decode WMI(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetWMIsForManufacturer/{manufacturer}": {
+      "get": {
+        "tags": ["WMI"],
+        "summary": "WMIs for Manufacturer",
+        "description": "Provides information on the all World Manufacturer Identifier (WMI) for a specified Manufacturer. Only WMI registered in vPICList are displayed.",
+        "operationId": "WMIsForManufacturer",
+        "parameters": [
+          {
+            "name": "manufacturer",
+            "in": "path",
+            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "required": true,
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/ManufacturerName"
+                },
+                {
+                  "$ref": "#/components/schemas/ManufacturerId"
+                }
+              ]
+            }
+          },
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "vehicleType",
+            "in": "query",
+            "required": false,
+            "description": "If VehicleType is a number - method will do exact match on VehicleType's Id. If VehicleType is a string - it will look for VehicleType whose name is LIKE the provided name (it accepts a partial VehicleType name as an input). Multiple results are returned in case of multiple matches.",
+            "schema": {
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/VehicleTypeString"
+                },
+                {
+                  "$ref": "#/components/schemas/VehicleTypeInteger"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
+    }
   },
-    "tags": [
-     {
+  "tags": [
+    {
       "name": "VIN"
     },
-     {
-      "name": "WMIs"
+    {
+      "name": "WMI"
     },
     {
       "name": "Makes"
@@ -152,5 +239,25 @@
     {
       "name": "Vehicle Variable"
     }
-  ]
+  ],
+  "components": {
+    "schemas": {
+      "ManufacturerName": {
+        "type": "string",
+        "default": "hon"
+      },
+      "ManufacturerId": {
+        "type": "integer",
+        "default": 987
+      },
+      "VehicleTypeString": {
+        "type": "string",
+        "default": "car"
+      },
+      "VehicleTypeInteger": {
+        "type": "integer",
+        "default": 2
+      }
+    }
+  }
 }
