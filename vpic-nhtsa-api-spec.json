@@ -245,23 +245,13 @@
         "operationId": "parts",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "type",
             "in": "query",
             "required": true,
             "description": "number, 565 (Vehicle Identification Number Guidance, based on 49 CFR Part 565) or 566 (Manufacturer Identification – Reporting Requirements based on 49 CFR Part 566)",
             "schema": {
               "type": "integer",
-              "example": "565"
+              "example": 565
             }
           },
           {
@@ -319,8 +309,8 @@
             "description": "(optional) number, 1 (default) first 1000 records, 2 - next 1000 records, ...",
             "schema": {
               "type": "integer",
-              "example": "1",
-              "default": "1"
+              "example": 1,
+              "default": 1
             }
           }
         ],
@@ -365,8 +355,8 @@
             "description": "Results are provided in pages of 100 items, use parameter 'page' to specify 1-st (default), 2nd, 3rd, ...Nth ... page.",
             "schema": {
               "type": "integer",
-              "example": "1",
-              "default": "1"
+              "example": 1,
+              "default": 1
             }
           }
         ],
@@ -484,7 +474,7 @@
             "required": false,
             "schema": {
               "type": "integer",
-              "example": "2013"
+              "example": 2013
             }
           },
           {
@@ -517,49 +507,7 @@
         "tags": ["Makes"],
         "summary": "Makes for Vehicle Type by Vehicle Type Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified vehicle type whose name is LIKE the vehicle type name in vPIC Dataset",
-        "operationId": "WMIsForManufacturer",
-        "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
-            "name": "vehicleType",
-            "in": "query",
-            "required": false,
-            "description": " Vehicle Type name can be a partial name, or a full name for more specificity (e.g., 'Vehicle', 'Moto', 'Low Speed Vehicle', etc.)",
-            "schema": {
-              "example": "car",
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/VehicleTypeString"
-                },
-                {
-                  "$ref": "#/components/schemas/VehicleTypeInteger"
-                }
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
-          }
-        }
-      }
-    },
-    "/vehicles/GetVehicleTypesForMake/{makeName}": {
-      "get": {
-        "tags": ["Vehicle Types"],
-        "summary": "Vehicle Types for Make by Name",
-        "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose name is LIKE the make name in vPIC Dataset. Make name can be a partial name, or a full name for more specificity (e.g., 'Merc;, 'Mercedes Benz', etc.)",
-        "operationId": "vehicleTypesForMakeByName",
+        "operationId": "MakesForVehicleTypeByVehicleTypeName",
         "parameters": [
           {
             "name": "format",
@@ -586,6 +534,41 @@
                   "$ref": "#/components/schemas/VehicleTypeInteger"
                 }
               ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetVehicleTypesForMake/{makeName}": {
+      "get": {
+        "tags": ["Vehicle Types"],
+        "summary": "Vehicle Types for Make by Name",
+        "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose name is LIKE the make name in vPIC Dataset",
+        "operationId": "vehicleTypesForMakeByName",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "makeName",
+            "in": "path",
+            "required": true,
+            "description": "Make name can be a partial name, or a full name for more specificity (e.g., 'Merc;, 'Mercedes Benz', etc.)",
+            "schema": {
+              "example": "mercedes",
+              "type": "string"
             }
           }
         ],
