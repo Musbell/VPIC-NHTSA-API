@@ -981,7 +981,7 @@
         }
       }
     },
-      "/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}/vehicletype/{type}": {
+    "/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}/vehicletype/{type}": {
       "get": {
         "tags": ["Models"],
         "summary": "Models for MakeId and a combination of Year and Vehicle Type",
@@ -1035,6 +1035,73 @@
           }
         }
       }
+    },
+    "/vehicles/GetVehicleVariableList": {
+      "get": {
+        "tags": ["Vehicle Variables"],
+        "summary": "Vehicle Variables List",
+        "description": "This provides a list of all the Vehicle related variables that are in vPIC dataset. Information on the name, description and the type of the variable is provided.",
+        "operationId": "vehicleVariables",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetVehicleVariableValuesList/{searchParameter}": {
+      "get": {
+        "tags": ["Vehicle Variables"],
+        "summary": "Vehicle Variable Values List",
+        "description": "This provides a list of all the accepted values for a given variable that are stored in vPIC dataset.",
+        "operationId": "vehicleVariablesValueList",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "searchParameter",
+            "in": "path",
+            "required": true,
+            "description": "Search parameter can either be a Variable Name ('battery type' in first example, please use full name, not just part of it), or Variable ID ('2' in second example). This applies to only 'Look up' type of variables.",
+            "schema": {
+              "example": "battery type",
+              "oneOf": [
+                {
+                  "$ref": "#/components/schemas/VariableName"
+                },
+                {
+                  "$ref": "#/components/schemas/VariableId"
+                }
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call according to the filled fields"
+          }
+        }
+      }
     }
   },
   "tags": [
@@ -1063,26 +1130,34 @@
       "name": "Models"
     },
     {
-      "name": "Vehicle Variable"
+      "name": "Vehicle Variables"
     }
   ],
   "components": {
     "schemas": {
       "ManufacturerName": {
         "type": "string",
-        "default": "hon"
+        "example": "hon"
       },
-      "ManufacturerId": { 
+      "ManufacturerId": {
         "type": "integer",
-        "default": 987
+        "example": 987
       },
       "VehicleTypeString": {
         "type": "string",
-        "default": "car"
+        "example": "car"
       },
       "VehicleTypeInteger": {
         "type": "integer",
-        "default": 2
+        "example": 2
+      },
+      "VariableName": {
+        "type": "string",
+        "example": "battery type"
+      },
+      "VariableId": {
+        "type": "integer",
+        "example": 2
       }
     }
   }
