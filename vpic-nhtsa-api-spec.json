@@ -632,7 +632,7 @@
           },
           {
             "name": "year",
-            "in": "path",
+            "in": "query",
             "required": true,
             "description": "Only years 2016 and above are supported",
             "schema": {
