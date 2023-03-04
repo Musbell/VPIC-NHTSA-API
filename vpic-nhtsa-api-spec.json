@@ -657,7 +657,7 @@
             "required": true,
             "description": "New (The Equipment Plant Code was assigned during the selected year), Updated - (The Equipment Plant data was modified during the selected year), Closed (The Equipment Plant is no longer Active), All (All Equipment Plant Codes regardless of year, including their status (active or closed))",
             "schema": {
-              "example": 1,
+              "example": "New",
               "enum": ["New", "Updated", "Closed", "All"],
               "type": "string"
             }
