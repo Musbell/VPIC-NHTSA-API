@@ -613,7 +613,7 @@
         }
       }
     },
-    "/vehicles/GetEquipmentPlantCodes/{year}": {
+    "/vehicles/GetEquipmentPlantCodes": {
       "get": {
         "tags": ["Equipment Plant"],
         "summary": "Equipment Plant Codes",
