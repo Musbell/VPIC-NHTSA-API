@@ -711,6 +711,40 @@
           }
         }
       }
+    },
+    "/vehicles/GetModelsForMakeId/{makeId}": {
+      "get": {
+        "tags": ["Models"],
+        "summary": "Models for MakeId",
+        "description": "This returns the Models in the vPIC dataset for a specified Make whose Id is EQUAL the MakeId in vPIC Dataset.",
+        "operationId": "modelsForMakeId",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "makeId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "example": 440,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Vehicle type(s) according to the filled fields"
+          }
+        }
+      }
     }
   },
   "tags": [
