@@ -612,6 +612,63 @@
           }
         }
       }
+    },
+    "/vehicles/GetEquipmentPlantCodes/{year}": {
+      "get": {
+        "tags": ["Equipment Plant"],
+        "summary": "Equipment Plant Codes",
+        "description": "Returns assigned Equipment Plant Codes. Can be filtered by Year, Equipment Type and Report Type.",
+        "operationId": "equipmentPlantCodes",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "description": "Only years 2016 and above are supported",
+            "schema": {
+              "example": 2016,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "equipmentType",
+            "in": "query",
+            "required": true,
+            "description": "1 - Tires, 3 - Brake Hoses, 13 - Glazing, 16 Retread",
+            "schema": {
+              "example": 1,
+              "enum": [1, 3, 13, 16],
+              "type": "integer"
+            }
+          },
+          {
+            "name": "ReportType",
+            "in": "query",
+            "required": true,
+            "description": "New (The Equipment Plant Code was assigned during the selected year), Updated - (The Equipment Plant data was modified during the selected year), Closed (The Equipment Plant is no longer Active), All (All Equipment Plant Codes regardless of year, including their status (active or closed))",
+            "schema": {
+              "example": 1,
+              "enum": ["New", "Updated", "Closed", "All"],
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of Vehicle type(s) according to the filled fields"
+          }
+        }
+      }
     }
   },
   "tags": [
