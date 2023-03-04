@@ -890,7 +890,152 @@
           }
         }
       }
-    }
+    },
+    "/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}": {
+      "get": {
+        "tags": ["Models"],
+        "summary": " Models for Make Id and a combination of Year and Vehicle Type",
+        "description": "This returns the Models in the vPIC dataset for a specified year and Make whose Id is EQUAL the MakeId in vPIC Dataset.",
+        "operationId": "ModelsForMakeIdYear",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "makeId",
+            "in": "path",
+            "required": true,
+            "description": "MakeId is integer",
+            "schema": {
+              "example": 474,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "description": "ModelYear is integer (greater than 1995)",
+            "schema": {
+              "example": 2015,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+          }
+        }
+      }
+    },
+    "/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/vehicletype/{type}": {
+      "get": {
+        "tags": ["Models"],
+        "summary": "Models for MakeId and Vehicle Type",
+        "description": "This returns the Models in the vPIC dataset for a specified year and Make whose Id is EQUAL the MakeId in vPIC Dataset.",
+        "operationId": "ModelsForMakeIdYearVehicleType",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "makeId",
+            "in": "path",
+            "required": true,
+            "description": "MakeId is integer",
+            "schema": {
+              "example": 474,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "description": "Vehicle Type name can be a partial name, or a full name for more specificity (e.g., 'Vehicle', 'Moto', 'Low Speed Vehicle', etc.)",
+            "schema": {
+              "example": "truck",
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call according to the filled fields"
+          }
+        }
+      }
+    },
+      "/vehicles/GetModelsForMakeIdYear/makeId/{makeId}/modelyear/{year}/vehicletype/{type}": {
+      "get": {
+        "tags": ["Models"],
+        "summary": "Models for MakeId and a combination of Year and Vehicle Type",
+        "description": "This returns the Models in the vPIC dataset for a specified year and Make whose Id is EQUAL the MakeId in vPIC Dataset.",
+        "operationId": "ModelsForMakeIdYearVehicleTypeCombine",
+        "parameters": [
+          {
+            "name": "format",
+            "in": "query",
+            "required": true,
+            "schema": {
+              "enum": ["xml", "csv", "json"],
+              "type": "string",
+              "example": "json"
+            }
+          },
+          {
+            "name": "makeId",
+            "in": "path",
+            "required": true,
+            "description": "MakeId is integer",
+            "schema": {
+              "example": 474,
+              "type": "integer"
+            }
+          },
+          {
+            "name": "type",
+            "in": "path",
+            "required": true,
+            "description": "Vehicle Type name can be a partial name, or a full name for more specificity (e.g., 'Vehicle', 'Moto', 'Low Speed Vehicle', etc.)",
+            "schema": {
+              "example": "truck",
+              "type": "string"
+            }
+          },
+          {
+            "name": "year",
+            "in": "path",
+            "required": true,
+            "description": "ModelYear is integer (greater than 1995)",
+            "schema": {
+              "example": 2015,
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful call according to the filled fields"
+          }
+        }
+      }
+    },
   },
   "tags": [
     {
@@ -927,7 +1072,7 @@
         "type": "string",
         "default": "hon"
       },
-      "ManufacturerId": {
+      "ManufacturerId": { 
         "type": "integer",
         "default": 987
       },
