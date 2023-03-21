@@ -170,57 +170,6 @@
         }
       }
     },
-    "/vehicles/GetMakesForManufacturerAndYear/{manufacturer}": {
-      "get": {
-        "tags": ["Makes"],
-        "summary": " Makes for Manufacturer by Manufacturer Name and Year",
-        "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer and whose Year From and Year To range cover the specified year",
-        "operationId": "makesForManufacturerByManufacturerNameAndYear",
-        "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
-            "name": "year",
-            "in": "query",
-            "required": false,
-            "schema": {
-              "type": "integer",
-              "example": 2013
-            }
-          },
-          {
-            "name": "manufacturer",
-            "in": "path",
-            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
-            "required": true,
-            "schema": {
-              "example": "honda",
-              "oneOf": [
-                {
-                  "$ref": "#/components/schemas/ManufacturerName"
-                },
-                {
-                  "$ref": "#/components/schemas/ManufacturerId"
-                }
-              ]
-            }
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Successful call of all make(s) according to the filled fields"
-          }
-        }
-      }
-    },
     "/vehicles/GetMakesForVehicleType/{vehicleType}": {
       "get": {
         "tags": ["Makes"],
