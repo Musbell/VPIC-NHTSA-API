@@ -21,18 +21,6 @@
         "summary": "All Makes",
         "description": "This provides a list of all the Makes available in vPIC Dataset.",
         "operationId": "allMakes",
-        "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          }
-        ],
         "responses": {
           "200": {
             "description": "Successful call of all make(s) according to the filled fields"
@@ -95,17 +83,6 @@
             }
           },
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "description": "(optional) string, can be 'xml' (default), 'csv' or 'json'",
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "page",
             "in": "query",
             "required": true,
@@ -131,16 +108,6 @@
         "description": "This provides a list of all the Manufacturers available in vPIC Dataset.",
         "operationId": "manufacturers",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "ManufacturerType",
             "in": "query",
@@ -178,16 +145,6 @@
         "operationId": "manufacturerDetails",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "manufacturer",
             "in": "path",
             "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
@@ -220,16 +177,6 @@
         "operationId": "makesForManufacturerByManufacturerName",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "manufacturer",
             "in": "path",
             "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
@@ -261,16 +208,6 @@
         "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer and whose Year From and Year To range cover the specified year",
         "operationId": "makesForManufacturerByManufacturerNameAndYear",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "year",
             "in": "query",
@@ -313,16 +250,6 @@
         "operationId": "MakesForVehicleTypeByVehicleTypeName",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "vehicleType",
             "in": "path",
             "required": true,
@@ -355,16 +282,6 @@
         "operationId": "vehicleTypesForMakeByName",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "makeName",
             "in": "path",
             "required": true,
@@ -390,16 +307,6 @@
         "operationId": "vehicleTypesForMakeById",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "makeId",
             "in": "path",
             "required": true,
@@ -423,16 +330,6 @@
         "description": "Returns assigned Equipment Plant Codes. Can be filtered by Year, Equipment Type and Report Type.",
         "operationId": "equipmentPlantCodes",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "year",
             "in": "query",
@@ -481,16 +378,6 @@
         "operationId": "modelsForMake",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "manufacturer",
             "in": "path",
             "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
@@ -523,16 +410,6 @@
         "operationId": "modelsForMakeId",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "makeId",
             "in": "path",
             "required": true,
@@ -556,16 +433,6 @@
         "description": "This returns the Models in the vPIC dataset for a specified year and Make whose name is LIKE the Make in vPIC Dataset.",
         "operationId": "ModelsForMakeYear",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "make",
             "in": "path",
@@ -602,16 +469,6 @@
         "operationId": "ModelsForMakeYearVehicleType",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "make",
             "in": "path",
             "required": true,
@@ -646,16 +503,6 @@
         "description": "This returns the Models in the vPIC dataset for a specified year and Make whose name is LIKE the Make in vPIC Dataset.",
         "operationId": "ModelsForMakeYearVehicleTypeCombine",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "make",
             "in": "path",
@@ -702,16 +549,6 @@
         "operationId": "ModelsForMakeIdYear",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "makeId",
             "in": "path",
             "required": true,
@@ -747,16 +584,6 @@
         "operationId": "ModelsForMakeIdYearVehicleType",
         "parameters": [
           {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
-          {
             "name": "makeId",
             "in": "path",
             "required": true,
@@ -791,16 +618,6 @@
         "description": "This returns the Models in the vPIC dataset for a specified year and Make whose Id is EQUAL the MakeId in vPIC Dataset.",
         "operationId": "ModelsForMakeIdYearVehicleTypeCombine",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "makeId",
             "in": "path",
@@ -845,18 +662,7 @@
         "summary": "Vehicle Variables List",
         "description": "This provides a list of all the Vehicle related variables that are in vPIC dataset. Information on the name, description and the type of the variable is provided.",
         "operationId": "vehicleVariables",
-        "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          }
-        ],
+
         "responses": {
           "200": {
             "description": "Successful call according to the filled fields"
@@ -871,16 +677,6 @@
         "description": "This provides a list of all the accepted values for a given variable that are stored in vPIC dataset.",
         "operationId": "vehicleVariablesValueList",
         "parameters": [
-          {
-            "name": "format",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "enum": ["xml", "csv", "json"],
-              "type": "string",
-              "example": "json"
-            }
-          },
           {
             "name": "searchParameter",
             "in": "path",
