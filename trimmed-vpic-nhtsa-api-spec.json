@@ -207,7 +207,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+            "description": "Successful call"
           }
         }
       }
@@ -242,7 +242,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+            "description": "Successful call"
           }
         }
       }
@@ -397,7 +397,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call of WMIs for Manufacturer(s) according to the filled fields"
+            "description": "Successful call"
           }
         }
       }
