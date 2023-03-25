@@ -37,7 +37,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -85,7 +85,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+             "description": ""
           }
         }
       }
@@ -129,7 +129,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -173,7 +173,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -217,7 +217,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -254,7 +254,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -290,7 +290,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -334,7 +334,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+             "description": ""
           }
         }
       }
@@ -370,7 +370,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
@@ -417,7 +417,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Successful call"
+            "description": ""
           }
         }
       }
