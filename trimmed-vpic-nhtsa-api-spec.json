@@ -20,7 +20,6 @@
         "tags": [
           "Makes"
         ],
-        "summary": "All Makes",
         "description": "This provides a list of all the Makes available in vPIC Dataset.",
         "operationId": "allMakes",
         "parameters": [
@@ -51,7 +50,6 @@
         "tags": [
           "Manufacturers"
         ],
-        "summary": "All Manufacturers",
         "description": "This provides a list of all the Manufacturers available in vPIC Dataset.",
         "operationId": "manufacturers",
         "parameters": [
@@ -103,7 +101,6 @@
         "tags": [
           "Manufacturers"
         ],
-        "summary": "Manufacturer Details",
         "description": "This provides the details for a specific manufacturer that is requested.",
         "operationId": "manufacturerDetails",
         "parameters": [
@@ -151,7 +148,6 @@
         "tags": [
           "Makes"
         ],
-        "summary": "Makes for Manufacturer by Manufacturer Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer that is requested.",
         "operationId": "makesForManufacturerByManufacturerName",
         "parameters": [
@@ -199,7 +195,6 @@
         "tags": [
           "Makes"
         ],
-        "summary": "Makes for Vehicle Type by Vehicle Type Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified vehicle type whose name is LIKE the vehicle type name in vPIC Dataset",
         "operationId": "MakesForVehicleTypeByVehicleTypeName",
         "parameters": [
@@ -247,7 +242,6 @@
         "tags": [
           "Vehicle Types"
         ],
-        "summary": "Vehicle Types for Make by Name",
         "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose name is LIKE the make name in vPIC Dataset",
         "operationId": "vehicleTypesForMakeByName",
         "parameters": [
@@ -288,7 +282,6 @@
         "tags": [
           "Vehicle Types"
         ],
-        "summary": "Vehicle Types for Make by Id",
         "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose ID equals the make ID in vPIC Dataset.",
         "operationId": "vehicleTypesForMakeById",
         "parameters": [
@@ -328,7 +321,6 @@
         "tags": [
           "Models"
         ],
-        "summary": "Models for Make",
         "description": "This returns the Models in the vPIC dataset for a specified Make whose name is LIKE the Make in vPIC Dataset. Make can be a partial, or a full for more specificity (e.g., ;Harley', 'Harley Davidson', etc.)",
         "operationId": "modelsForMake",
         "parameters": [
@@ -376,7 +368,6 @@
         "tags": [
           "Models"
         ],
-        "summary": "Models for MakeId",
         "description": "This returns the Models in the vPIC dataset for a specified Make whose Id is EQUAL the MakeId in vPIC Dataset.",
         "operationId": "modelsForMakeId",
         "parameters": [
@@ -416,7 +407,6 @@
         "tags": [
           "Models"
         ],
-        "summary": "Models for Make Year",
         "description": "This returns the Models in the vPIC dataset for a specified year and Make whose name is LIKE the Make in vPIC Dataset.",
         "operationId": "ModelsForMakeYear",
         "parameters": [
