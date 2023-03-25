@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": "The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications",
+    "description": "The VPIC-NHTSA API provides different ways to gather information on Vehicles and their specifications",
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
     "contact": {
