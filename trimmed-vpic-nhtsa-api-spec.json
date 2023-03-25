@@ -1,8 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": "The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications. The format parameter specifies the desired format of the response data, and the allowed values for this parameter are limited to 'xml', 'csv', or 'json'",
-
+    "description": "The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications. The format parameter specifies the desired format of the response data, and the allowed values for this parameter are limited to \"xml\", \"csv\", or \"json\"",
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
     "contact": {
@@ -18,7 +17,9 @@
   "paths": {
     "/vehicles/GetAllMakes": {
       "get": {
-        "tags": ["Makes"],
+        "tags": [
+          "Makes"
+        ],
         "summary": "All Makes",
         "description": "This provides a list of all the Makes available in vPIC Dataset.",
         "operationId": "allMakes",
@@ -28,7 +29,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -43,7 +48,9 @@
     },
     "/vehicles/GetAllManufacturers": {
       "get": {
-        "tags": ["Manufacturers"],
+        "tags": [
+          "Manufacturers"
+        ],
         "summary": "All Manufacturers",
         "description": "This provides a list of all the Manufacturers available in vPIC Dataset.",
         "operationId": "manufacturers",
@@ -53,7 +60,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -89,7 +100,9 @@
     },
     "/vehicles/GetManufacturerDetails/{manufacturer}": {
       "get": {
-        "tags": ["Manufacturers"],
+        "tags": [
+          "Manufacturers"
+        ],
         "summary": "Manufacturer Details",
         "description": "This provides the details for a specific manufacturer that is requested.",
         "operationId": "manufacturerDetails",
@@ -99,7 +112,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -131,7 +148,9 @@
     },
     "/vehicles/GetMakeForManufacturer/{manufacturer}": {
       "get": {
-        "tags": ["Makes"],
+        "tags": [
+          "Makes"
+        ],
         "summary": "Makes for Manufacturer by Manufacturer Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified manufacturer that is requested.",
         "operationId": "makesForManufacturerByManufacturerName",
@@ -141,7 +160,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -173,7 +196,9 @@
     },
     "/vehicles/GetMakesForVehicleType/{vehicleType}": {
       "get": {
-        "tags": ["Makes"],
+        "tags": [
+          "Makes"
+        ],
         "summary": "Makes for Vehicle Type by Vehicle Type Name",
         "description": "This returns all the Makes in the vPIC dataset for a specified vehicle type whose name is LIKE the vehicle type name in vPIC Dataset",
         "operationId": "MakesForVehicleTypeByVehicleTypeName",
@@ -183,7 +208,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -215,7 +244,9 @@
     },
     "/vehicles/GetVehicleTypesForMake/{makeName}": {
       "get": {
-        "tags": ["Vehicle Types"],
+        "tags": [
+          "Vehicle Types"
+        ],
         "summary": "Vehicle Types for Make by Name",
         "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose name is LIKE the make name in vPIC Dataset",
         "operationId": "vehicleTypesForMakeByName",
@@ -225,7 +256,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -250,7 +285,9 @@
     },
     "/vehicles/GetVehicleTypesForMakeId/{makeId}": {
       "get": {
-        "tags": ["Vehicle Types"],
+        "tags": [
+          "Vehicle Types"
+        ],
         "summary": "Vehicle Types for Make by Id",
         "description": "This returns all the Vehicle Types in the vPIC dataset for a specified Make whose ID equals the make ID in vPIC Dataset.",
         "operationId": "vehicleTypesForMakeById",
@@ -260,7 +297,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -284,7 +325,9 @@
     },
     "/vehicles/GetModelsForMake/{manufacturer}": {
       "get": {
-        "tags": ["Models"],
+        "tags": [
+          "Models"
+        ],
         "summary": "Models for Make",
         "description": "This returns the Models in the vPIC dataset for a specified Make whose name is LIKE the Make in vPIC Dataset. Make can be a partial, or a full for more specificity (e.g., ;Harley', 'Harley Davidson', etc.)",
         "operationId": "modelsForMake",
@@ -294,7 +337,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -326,7 +373,9 @@
     },
     "/vehicles/GetModelsForMakeId/{makeId}": {
       "get": {
-        "tags": ["Models"],
+        "tags": [
+          "Models"
+        ],
         "summary": "Models for MakeId",
         "description": "This returns the Models in the vPIC dataset for a specified Make whose Id is EQUAL the MakeId in vPIC Dataset.",
         "operationId": "modelsForMakeId",
@@ -336,7 +385,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -360,7 +413,9 @@
     },
     "/vehicles/GetModelsForMakeYear/make/{make}/modelyear/{year}": {
       "get": {
-        "tags": ["Models"],
+        "tags": [
+          "Models"
+        ],
         "summary": "Models for Make Year",
         "description": "This returns the Models in the vPIC dataset for a specified year and Make whose name is LIKE the Make in vPIC Dataset.",
         "operationId": "ModelsForMakeYear",
@@ -370,7 +425,11 @@
             "in": "query",
             "required": true,
             "schema": {
-              "enum": ["xml", "csv", "json"],
+              "enum": [
+                "xml",
+                "csv",
+                "json"
+              ],
               "type": "string",
               "example": "json"
             }
@@ -414,7 +473,6 @@
     {
       "name": "Vehicle Types"
     },
-
     {
       "name": "Models"
     }
