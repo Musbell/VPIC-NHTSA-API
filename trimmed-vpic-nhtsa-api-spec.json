@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": 'The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications. The format parameter specifies the desired format of the response data, and the allowed values for this parameter are limited to "xml", "csv", or "json"',
+    "description": "The NHTSA Product Information Catalog Vehicle Listing (vPIC) Application Programming Interface (API) provides different ways to gather information on Vehicles and their specifications. The format parameter specifies the desired format of the response data, and the allowed values for this parameter are limited to 'xml', 'csv', or 'json'",
 
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
