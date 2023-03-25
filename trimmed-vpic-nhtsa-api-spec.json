@@ -21,8 +21,7 @@
           "Makes"
         ],
         "summary": "All Makes",
-        "description": "Get all the Makes available in vPIC Dataset.",
-        "operationId": "allMakes",
+        "operationId": "GetAllMakes",
         "parameters": [
           {
             "name": "format",
@@ -48,8 +47,7 @@
           "Manufacturers"
         ],
         "summary": "All Manufacturers",
-        "description": "Get all the Manufacturers available in vPIC Dataset.",
-        "operationId": "manufacturers",
+        "operationId": "GetAllManufacturers",
         "parameters": [
           {
             "name": "format",
@@ -96,8 +94,7 @@
           "Manufacturers"
         ],
         "summary": "Manufacturer Details",
-        "description": "Get the details for a specific manufacturer that is requested.",
-        "operationId": "manufacturerDetails",
+        "operationId": "GetManufacturerDetails",
         "parameters": [
           {
             "name": "format",
