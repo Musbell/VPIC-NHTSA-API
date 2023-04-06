@@ -62,7 +62,7 @@
           {
             "name": "ManufacturerType",
             "in": "query",
-            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "description": "The parameter supports either exact Manufacturer's Id matching with numbers or partial name searching with strings, returning multiple matching results when needed.",
             "required": true,
             "schema": {
               "example": "Intermediate",
@@ -109,7 +109,7 @@
           {
             "name": "manufacturer",
             "in": "path",
-            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "description": "The parameter supports either exact Manufacturer's Id matching with numbers or partial name searching with strings, returning multiple matching results when needed.",
             "required": true,
             "schema": {
               "example": "honda",
@@ -153,7 +153,7 @@
           {
             "name": "manufacturer",
             "in": "path",
-            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "description": "The parameter supports either exact Manufacturer's Id matching with numbers or partial name searching with strings, returning multiple matching results when needed.",
             "required": true,
             "schema": {
               "example": "honda",
@@ -314,7 +314,7 @@
           {
             "name": "manufacturer",
             "in": "path",
-            "description": "If first parameter is a number - method will do exact match on Manufacturer's Id.If first parameter is a string - it will look for manufacturers whose name is LIKE the provided name (it accepts a partial manufacturer name as an input). Multiple results are returned in case of multiple matches.",
+            "description": "The parameter supports either exact Manufacturer's Id matching with numbers or partial name searching with strings, returning multiple matching results when needed.",
             "required": true,
             "schema": {
               "example": "honda",
