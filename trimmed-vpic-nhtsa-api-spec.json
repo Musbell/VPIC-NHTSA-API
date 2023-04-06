@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": "The VPIC-NHTSA API provides different ways to gather information on Vehicles and their specifications. The 'format' parameter is required, defaulting to 'json', and allows 'xml', 'csv', or 'json' output formats.",
+    "description": "The VPIC-NHTSA API provides different ways to gather information on Vehicles and their specifications. The 'format' parameter is required, defaulting to 'xml', and allows 'xml', 'csv', or 'json' output formats.",
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
     "contact": {
