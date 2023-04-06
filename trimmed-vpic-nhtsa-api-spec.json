@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.3",
   "info": {
-    "description": "The VPIC-NHTSA API provides different ways to gather information on Vehicles and their specifications",
+    "description": "The VPIC-NHTSA API provides different ways to gather information on Vehicles and their specifications. The 'format' API parameter is required, defaulting to 'json', and allows 'xml', 'csv', or 'json' output formats.",
     "title": "VPIC-NHTSA API",
     "version": "1.0.0",
     "contact": {
@@ -30,8 +30,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           }
         ],
@@ -57,8 +56,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -105,8 +103,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -150,8 +147,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -195,8 +191,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -240,8 +235,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -278,8 +272,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -315,8 +308,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -360,8 +352,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
@@ -397,8 +388,7 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json",
-              "enum": ["xml", "csv", "json"]
+              "example": "json"
             }
           },
           {
