@@ -30,7 +30,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           }
         ],
@@ -56,7 +57,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -103,7 +105,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -145,9 +148,10 @@
             "in": "query",
             "required": true,
             "schema": {
-               "default": "json",
+              "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -191,7 +195,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -233,9 +238,10 @@
             "in": "query",
             "required": true,
             "schema": {
-             "default": "json",
+              "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -272,7 +278,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -308,7 +315,8 @@
             "schema": {
               "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -350,9 +358,10 @@
             "in": "query",
             "required": true,
             "schema": {
-             "default": "json",
+              "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
@@ -386,9 +395,10 @@
             "in": "query",
             "required": true,
             "schema": {
-             "default": "json",
+              "default": "json",
               "type": "string",
-              "example": "json"
+              "example": "json",
+              "enum": ["xml", "csv", "json"]
             }
           },
           {
